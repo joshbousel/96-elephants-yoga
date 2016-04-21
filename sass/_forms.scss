@@ -1,0 +1,34 @@
+.yoga-input {
+	appearance: none;
+	background: #fff;
+    border: 2px solid #bdd4e1;
+	border-radius: 2px;
+	color: $dark-brown;
+	font-family: $font-merriam;
+	font-size: 1.25rem;
+	line-height: 1.25rem;
+	padding: 14px 18px 9px;
+	transition: $default-transition;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	
+	&--error {
+		border: 2px solid $red;	
+	}
+	
+	&--is-dropdown {
+		background-image: url('#{$image-path}arrow-down.png');
+		background-position: right 10px top 50%;
+		background-repeat: no-repeat;
+	}
+	
+	&::-webkit-input-placeholder,
+	&--placeholder {
+		color: #b5b4b2;	
+	}
+	
+	&:focus {
+		border: 2px solid $dark-blue;
+		outline: none;
+	}
+}
