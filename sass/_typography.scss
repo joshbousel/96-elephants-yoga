@@ -21,6 +21,12 @@
 	&--error {
 		color: $red;
 	}
+	
+	&--small-type {
+		color: #A29A92;
+		font-size: .875rem;
+		line-height: 1.25rem;
+	}
 }
 
 .yoga-header {

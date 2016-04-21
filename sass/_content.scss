@@ -13,6 +13,10 @@
 		}
 	}
 	
+	&--no-bottom-padding {
+		padding: 50px 0 0;
+	}
+	
 	.yoga-body-text {
 		margin: 0 auto;
 		max-width: 620px;
@@ -83,7 +87,7 @@
 
 .yoga-content__video {
     height: 0;
-    margin: 0 auto;
+    margin: 0 auto 15px;
 	max-width: 600px;
     overflow: hidden;
 	padding: 30px 0 42.75%;

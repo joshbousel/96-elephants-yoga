@@ -1,0 +1,43 @@
+.yoga-donate {
+	background-color: #080807;
+	background-image: url('#{$image-path}bg-elephant-donate.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 550px;
+	position: relative;
+	text-align: center;
+}
+
+.yoga-donate__levels {
+	bottom: 60px;
+	margin: 0 5%;
+	position: absolute;
+	width: 90%;
+	
+	&__level {
+		background: rgba(0,0,0,.45);
+		border: 2px solid #fff;
+		border-radius: 2px;
+		color: #fff;
+		display: inline-block;
+		font-size: 1.25rem;
+		line-height: 1.25rem;
+		margin: 0 15px 20px;
+		padding: 10px 20px 6px;
+		transition: $default-transition;
+		
+		&:hover {
+			background: #000;
+		}
+		
+		&--is-active, &--is-active:hover {
+			background: #fff;
+			color: #080807;
+		}
+	}
+	
+	.yoga-button {
+		display: block;
+		margin: 10px auto 0;
+	}
+}
