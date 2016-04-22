@@ -1,0 +1,89 @@
+.yoga-lightbox {
+	background-color: #fff;
+	background-image: url('#{$image-path}bg-paper.png');
+	left: 50%;
+	margin: 0 0 0 -30%;
+	max-height: 90%;
+	opacity: 0;
+	overflow: auto;
+	padding: 45px;
+	position: fixed;
+	text-align: center;
+	transition: all 0.35s ease-out;
+	top: 5%;
+	width: 60%;
+	visibility: hidden;
+	z-index: 1001;
+	
+	@media all and (max-width:$break-desktop) {
+		margin: 0 0 0 -40%;
+		width: 80%;
+	}
+	
+	@media all and (max-width:$break-tablet) {
+		margin: 0 0 0 -45%;
+		max-height: 95%;
+		top: 2.5%;
+		width: 90%;
+	}
+	
+	.yoga-body-text {
+		margin: 0 0 25px;
+		text-align: left;
+	}
+	
+	.yoga-header {
+		margin: 0 0 25px;
+	}
+}
+
+.yoga-lightbox__close-button {
+	border-radius: 0;
+	left: 50%;
+	margin: 0 0 0 calc(30% - 45px);
+	right: -1px;
+	padding: 5px;
+	position: fixed;
+	top: 5%;
+	z-index: 1002;
+	
+	@media all and (max-width:$break-desktop) {
+		margin: 0 0 0 calc(40% - 45px);
+	}
+	
+	@media all and (max-width:$break-tablet) {
+		margin: 0 0 0 calc(45% - 45px);
+		top: 2.5%;
+	}
+	
+	&__icon {
+		display: block;
+		fill: #fff;
+		height: 35px;
+		width: 35px;
+	}
+}
+
+.yoga-lightbox-visible {	
+	.yoga-lightbox {
+		opacity: 1;
+		visibility: visible;
+	}
+	
+	.yoga-screen {
+		opacity: .35;
+		visibility: visible;
+	}
+}
+
+.yoga-screen {
+	background-color: #000;
+	height: 100%;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	transition: all 0.2s ease-out;
+	width: 100%;
+	visibility: hidden;
+	z-index: 1000;
+}

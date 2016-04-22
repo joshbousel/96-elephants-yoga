@@ -43,9 +43,7 @@ $(function(){
 		var index = $(this).index();
 		donationLevelId = $(this).data("id");
 		var activeClass = 'yoga-donate__levels__level--is-active';
-		
-		console.log(donationLevelId);
-		
+				
 		$('.yoga-donate__levels__level').each(function(i){
 			if (i == index) {
 				$(this).addClass(activeClass);
@@ -60,6 +58,28 @@ $(function(){
 		
 		var donationLink = 'https://secure3.convio.net/wcs/site/Donation2?9342.donation=form1&amp;df_id=9342&set.DonationLevel='+donationLevelId;
 		window.location.href = donationLink;
+	});
+	
+	// Lightbox Functions
+	function toggleLightbox(visible) {
+		var lightboxClass = 'yoga-lightbox-visible';
+		var $body = $('body');
+				
+		if (visible) {
+			$body.addClass(lightboxClass);
+		} else {
+			$body.removeClass(lightboxClass);
+		}
+	}
+	
+	$('.yoga-legal-notice').on('click',function(e){
+		e.preventDefault();
+		toggleLightbox(true);
+	});
+	
+	$('.yoga-lightbox__close-button').on('click',function(e){
+		e.preventDefault();
+		toggleLightbox(false);
 	});
 
 });

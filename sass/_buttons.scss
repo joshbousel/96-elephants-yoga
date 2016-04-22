@@ -11,10 +11,10 @@
 	text-transform: uppercase;
 	
 	@media all and (max-width:$break-mobile) {
-			font-size: 1.85rem;
-			line-height: 1.85rem;
-			padding: 7px 20px;
-		}
+		font-size: 1.85rem;
+		line-height: 1.85rem;
+		padding: 7px 20px;
+	}
 	
 	&:hover {
 		background-image: url('../assets/textures/cardboard--full-b9634961afe2722bd45c2987b63261b1.jpg');
