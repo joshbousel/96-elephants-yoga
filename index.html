@@ -118,9 +118,9 @@
 		
 				<a class="menu__wcs-logo" data-track-delay="true" data-track="Navigation|WCS Icon|WCS Icon" href="http://www.wcs.org/">Wildlife Conservation Society</a>
 		
-				<a class="menu__donate" data-track="Navigation|Donate|Donate" href="https://secure3.convio.net/wcs/site/SPageNavigator/96_Elephant_2013_donation_form.html" data-track-delay="true">
-					<span>
-						Donate
+				<a class="yoga-button yoga-button--menu-donate" data-track="Navigation|Donate|Donate" href="https://secure3.convio.net/wcs/site/SPageNavigator/96_Elephant_2013_donation_form.html" data-track-delay="true">
+					<span class="yoga-button__action">
+						Donate Now
 					</span>
 				</a>
 			</nav>
@@ -137,7 +137,7 @@
 			</div>
 		</section>
 		
-		<section class="yoga-content yoga-content--no-bottom-padding">
+		<section class="yoga-content yoga-content--no-bottom-padding yoga-content--challenge">
 			<div class="yoga-content__container">
 				<h2 class="yoga-header yoga-header--has-logo">Show Your Support</h2>
 				<h3 class="yoga-sub-header yoga-sub-header--red">Step 1: Strike a Pose</h3>
@@ -149,24 +149,34 @@
 					<a href="#" class="yoga-content__pose-nav__item">Sport</a>
 				</nav>
 				<div class="yoga-content__video">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/bU2Jbpzm4nI?showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+					<iframe class="yoga-content__video__embed yoga-content__video__embed--is-active" width="560" height="315" src="https://www.youtube.com/embed/bU2Jbpzm4nI?showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+					<iframe class="yoga-content__video__embed" width="560" height="315" src="https://www.youtube.com/embed/WJGJevIJFYY?showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+					<iframe class="yoga-content__video__embed" width="560" height="315" src="https://www.youtube.com/embed/Yy1ZfmjX12o?showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+					<iframe class="yoga-content__video__embed" width="560" height="315" src="https://www.youtube.com/embed/bU2Jbpzm4nI?showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
 				</div>
 				<p class="yoga-body-text yoga-body-text--small-type">Individuals participating in the Elephant Yoga Challenge do so at their own election and risk. <a href="#">Read more here</a>.</p>
 				<h3 class="yoga-sub-header yoga-sub-header--red yoga-sub-header--has-top-padding">Step 2: Share &amp; Challenge</h3>
 				<p class="yoga-body-text">Upload your pose to social media and challenge three of your friends to take the <a href="#">#ElephantYogaChallenge</a>.</p>
+			</div>
+			<div class="yoga-content__posts">
+				<img class="yoga-content__posts__post" src="images/post-instagram.png" alt="Instagram">
+				<img class="yoga-content__posts__post" src="images/post-facebook.png" alt="Facebook">
+				<img class="yoga-content__posts__post" src="images/post-twitter.png" alt="Instagram">
+			</div>
+			<div class="yoga-content__container">
 				<h3 class="yoga-sub-header yoga-sub-header--red yoga-sub-header--has-top-padding">Step 3: Give</h3>
-				<p class="yoga-body-text">Do more by donating to help save elephants.</p>
+				<p class="yoga-body-text yoga-body-text--compact-padding">Do more by donating to help save elephants.</p>
 			</div>
 		</section>
 		
 		<section class="yoga-donate">
 			<div class="yoga-donate__levels">
-				<a href="#" class="yoga-donate__levels__level">$5</a>
-				<a href="#" class="yoga-donate__levels__level yoga-donate__levels__level--is-active">$10</a>
-				<a href="#" class="yoga-donate__levels__level">$25</a>
-				<a href="#" class="yoga-donate__levels__level">$50</a>
-				<a href="#" class="yoga-donate__levels__level">$100</a>
-				<a href="#" class="yoga-donate__levels__level">Other Amount</a>
+				<a href="#" class="yoga-donate__levels__level" data-id="5">$5</a>
+				<a href="#" class="yoga-donate__levels__level" data-id="10">$10</a>
+				<a href="#" class="yoga-donate__levels__level" data-id="25">$25</a>
+				<a href="#" class="yoga-donate__levels__level" data-id="50">$50</a>
+				<a href="#" class="yoga-donate__levels__level" data-id="100">$100</a>
+				<a href="#" class="yoga-donate__levels__level" data-id="other">Other Amount</a>
 				<button class="yoga-button">
 					Donate
 				</button>
@@ -176,7 +186,26 @@
 		<section class="yoga-content">
 			<div class="yoga-content__container">
 				<h2 class="yoga-header yoga-header--has-logo">Show Your Support</h2>
-				<h3 class="yoga-sub-header yoga-sub-header--red yoga-sub-header--has-top-padding">Why Support Elephants?</h3>
+			</div>
+			<div class="yoga-content__support">
+				<div class="yoga-content__support__item">
+					<a href="#"><img class="yoga-content__support__item__image" src="images/support-profile-image.jpg" alt="support-profile-image"></a>
+					<p class="yoga-content__support__item__text">Change Your Profile Photo</p>
+					<p class="yoga-content__support__item__text"><a href="#">Download</a></p>
+				</div>
+				<div class="yoga-content__support__item">
+					<a href="#"><img class="yoga-content__support__item__image" src="images/support-cover-image.jpg" alt="support-profile-image"></a>
+					<p class="yoga-content__support__item__text">Change Your Facebook Cover Photo</p>
+					<p class="yoga-content__support__item__text"><a href="#">Download</a></p>
+				</div>
+				<div class="yoga-content__support__item">
+					<a href="#"><img class="yoga-content__support__item__image" src="images/support-flyer.jpg" alt="support-profile-image"></a>
+					<p class="yoga-content__support__item__text">Post an Informational Flyer at Your Studio</p>
+					<p class="yoga-content__support__item__text"><a href="#">Download</a></p>
+				</div>
+			</div>
+			<div class="yoga-content__container">
+				<h3 class="yoga-sub-header yoga-sub-header--red">Why Support Elephants?</h3>
 				<p class="yoga-body-text">Elephants are amazing, intelligent animals, so much like us in so many ways, and crucial to landscapes they call home. Yet today they face a serious crisis. The global demand for their ivory has fed a brutal slaughter, which claims 96 of them everyday.</p>
 				<button class="yoga-button">
 					More FAQs
