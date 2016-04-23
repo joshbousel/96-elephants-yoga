@@ -3,7 +3,7 @@ $(function(){
 	var donationLevelId;
 	
 	// Scroll from hero to start of challenge
-	$('.yoga-hero .yoga-button').on('click',function(e){
+	$('.yoga-hero .yoga-button').on('click touchend',function(e){
 		e.preventDefault();
 		
 		var offset = $('.yoga-content--challenge').offset();
@@ -11,7 +11,7 @@ $(function(){
 	});
 	
 	// Video toggler
-	$('.yoga-content__pose-nav__item').on('click',function(e){
+	$('.yoga-content__pose-nav__item').on('click touchend',function(e){
 		e.preventDefault();
 		
 		var index = $(this).index();
@@ -37,7 +37,7 @@ $(function(){
 	});
 
 	// Donation selection
-	$('.yoga-donate__levels__level').on('click',function(e){
+	$('.yoga-donate__levels__level').on('click touchend',function(e){
 		e.preventDefault();
 		
 		var index = $(this).index();
@@ -53,7 +53,7 @@ $(function(){
 		});
 	});
 	
-	$('.yoga-donate .yoga-button').on('click',function(e){
+	$('.yoga-donate .yoga-button').on('click touchend',function(e){
 		e.preventDefault();
 		
 		var donationLink = 'https://secure3.convio.net/wcs/site/Donation2?9342.donation=form1&amp;df_id=9342&set.DonationLevel='+donationLevelId;
@@ -72,12 +72,12 @@ $(function(){
 		}
 	}
 	
-	$('.yoga-legal-notice').on('click',function(e){
+	$('.yoga-legal-notice').on('click touchend',function(e){
 		e.preventDefault();
 		toggleLightbox(true);
 	});
 	
-	$('.yoga-lightbox__close-button').on('click',function(e){
+	$('.yoga-lightbox__close-button').on('click touchend',function(e){
 		e.preventDefault();
 		toggleLightbox(false);
 	});
