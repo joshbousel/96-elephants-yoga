@@ -47,7 +47,11 @@
 		padding: 0 0 25px;
 		
 		&--has-top-padding {
-			padding: 75px 0 25px 0;
+			padding: 75px 0 20px 0;
+			
+			 @media all and (max-width:$break-tablet) {
+				padding: 30px 0 20px 0;
+			}
 		}
 	}
 }
@@ -129,6 +133,10 @@
 		@media all and (max-width:$break-tablet) {
 			margin: 0 20px 20px;
 			width: 175px;
+		}
+		
+		 @media all and (max-width:$break-mobile) {
+			width: 60%;
 		}
 		
 		&__image {
