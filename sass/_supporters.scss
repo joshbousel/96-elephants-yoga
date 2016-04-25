@@ -1,0 +1,18 @@
+.yoga-supporters {
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
+	
+	&__image {
+		display: block;
+		float: left;
+		height: auto;
+		width: 33.33%;
+		
+		@media all and (max-width:$break-mobile) {
+			width: 50%;
+		}
+	}
+}

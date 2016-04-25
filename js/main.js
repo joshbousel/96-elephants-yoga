@@ -10,6 +10,14 @@ $(function(){
 		$('html, body').animate({ scrollTop: offset.top }, 250);
 	});
 	
+	// Scroll to supporters section
+	$('.yoga-supporters-link').on('click touchend',function(e){
+		e.preventDefault();
+		
+		var offset = $('.yoga-supporters').parent().offset();
+		$('html, body').animate({ scrollTop: offset.top }, 250);
+	});
+		
 	// Video toggler
 	$('.yoga-content__pose-nav__item').on('click touchend',function(e){
 		e.preventDefault();
@@ -56,7 +64,7 @@ $(function(){
 	$('.yoga-donate .yoga-button').on('click touchend',function(e){
 		e.preventDefault();
 		
-		var donationLink = 'https://secure3.convio.net/wcs/site/Donation2?9342.donation=form1&amp;df_id=9342&set.DonationLevel='+donationLevelId;
+		var donationLink = 'https://secure3.convio.net/wcs/site/Donation2?df_id=10241&mfc_pref=T&10241.donation=form1&set.DonationLevel='+donationLevelId;
 		window.location.href = donationLink;
 	});
 	

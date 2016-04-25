@@ -100,10 +100,12 @@
 .yoga-content__posts {
 	&__post {
 		margin: 0 30px;
+		height: 300px;
 		width: auto;
+		vertical-align: top;
 		
 		@media all and (max-width:$break-desktop) {
-			height: 300px;
+			height: 250px;
 			margin: 0 20px 20px;
 			
 			&:last-of-type {
@@ -112,7 +114,13 @@
 		}
 		
 		@media all and (max-width:$break-tablet) {
-			height: 250px;
+			height: 225px;
+		}
+		
+		@media all and (max-width:$break-mobile) {
+			height: auto;
+			margin: 0 0 30px;
+			width: 80%;
 		}
 	}
 }
