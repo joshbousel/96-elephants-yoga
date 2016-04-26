@@ -23,9 +23,18 @@
 	}
 	
 	&--small-type {
-		color: #A29A92;
-		font-size: .875rem;
-		line-height: 1.25rem;
+		color: #BDBAB6;
+		font-size: .75rem;
+		line-height: 1rem;
+		
+		a {
+			color: #BDBAB6;
+			text-decoration: underline;
+			
+			&:hover {
+				color: #aba398;
+			}
+		}
 	}
 }
 

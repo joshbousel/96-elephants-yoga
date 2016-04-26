@@ -64,6 +64,14 @@
 	}
 }
 
+.yoga-lightbox__content {
+	display: none;
+	
+	&--active {
+		display: block;
+	}
+}
+
 .yoga-lightbox-visible {	
 	.yoga-lightbox {
 		opacity: 1;

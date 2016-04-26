@@ -80,8 +80,29 @@ $(function(){
 		}
 	}
 	
+	function toggleLightboxContent(selectedClass) {
+		$('.yoga-lightbox__content').each(function(e){
+			var activeContentClass = 'yoga-lightbox__content--active';
+			
+			var $lightboxContent = $(this);
+			
+			if ($lightboxContent.hasClass(selectedClass)) {
+				$lightboxContent.addClass(activeContentClass);
+			} else {
+				$lightboxContent.removeClass(activeContentClass);
+			}
+		});
+	}
+	
 	$('.yoga-legal-notice').on('click touchend',function(e){
 		e.preventDefault();
+		toggleLightboxContent('yoga-lightbox__content--legal-notice');
+		toggleLightbox(true);
+	});
+	
+	$('.yoga-privacy-notice').on('click touchend',function(e){
+		e.preventDefault();
+		toggleLightboxContent('yoga-lightbox__content--privacy-notice');
 		toggleLightbox(true);
 	});
 	
