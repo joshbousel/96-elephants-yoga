@@ -51,6 +51,11 @@
 			font-size: 2.5rem;
 			line-height: 1.625rem;
 		}
+		
+		@media all and (max-width:$break-small-mobile) {
+			font-size: 2rem;
+			line-height: 1.5rem;
+		}
 	}
 	
 	.yoga-sub-header--red {
@@ -59,6 +64,12 @@
 		@media all and (max-width:$break-mobile) {
 			font-size: 2.25rem;
 			line-height: 1.25rem;
+		}
+		
+		
+		@media all and (max-width:$break-small-mobile) {
+			font-size: 1.85rem;
+			line-height: .75rem;
 		}
 	}
 	
