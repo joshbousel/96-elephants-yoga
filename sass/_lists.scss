@@ -1,0 +1,19 @@
+.yoga-list {
+	margin: 0 0 25px;
+	
+	&--is-ordered {
+		.yoga-list__item {
+			list-style: decimal;
+		}
+	}
+	
+	&--is-unordered {
+		.yoga-list__item {
+			list-style: disc;
+		}
+	}
+	
+	&__item {
+		@extend .yoga-body-text;
+	}
+}
