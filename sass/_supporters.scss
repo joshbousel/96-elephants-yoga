@@ -9,10 +9,14 @@
 		display: block;
 		float: left;
 		height: auto;
-		width: 33.33%;
+		width: 25%;
+		
+		@media all and (max-width:$break-tablet) {
+			width: 50%;
+		}
 		
 		@media all and (max-width:$break-mobile) {
-			width: 50%;
+			width: 100%;
 		}
 	}
 }
