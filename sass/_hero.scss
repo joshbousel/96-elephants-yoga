@@ -37,6 +37,14 @@
 	
 	&--wider {
 		max-width: 900px;
+		
+		@media all and (max-width:$break-desktop) {
+			max-width: 65%
+		}
+		
+		@media all and (max-width:$break-tablet) {
+			max-width: 85%
+		}
 	}
 	
 	.yoga-body-text {
