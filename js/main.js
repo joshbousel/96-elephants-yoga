@@ -3,7 +3,7 @@ $(function(){
 	var donationLevelId;
 	
 	// Scroll from hero to start of challenge
-	$('.yoga-hero .yoga-button').not('.yoga-form .yoga-button').on('click touchend',function(e){
+	$('.yoga-hero .yoga-button').not('.yoga-form__panel .yoga-button').on('click touchend',function(e){
 		e.preventDefault();
 		
 		var offset = $('.yoga-content--challenge').offset();
