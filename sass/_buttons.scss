@@ -9,6 +9,7 @@
 	line-height: 2.1875rem;
 	padding: 10px 30px;
 	text-transform: uppercase;
+	transition: none !important;
 	
 	@media all and (max-width:$break-mobile) {
 		font-size: 1.85rem;
@@ -18,5 +19,18 @@
 	
 	&:hover {
 		background-image: url('../assets/textures/cardboard--full-b9634961afe2722bd45c2987b63261b1.jpg');
+	}
+	
+	&--has-icon {
+		.yoga-button__icon {
+			fill: #fff;
+			height: 28px;
+			margin: 0 5px 0 0;
+			width: 28px;
+		}
+	}
+	
+	span {
+		color: #fff;
 	}
 }

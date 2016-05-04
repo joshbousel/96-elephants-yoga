@@ -35,6 +35,10 @@
 		padding: 35px 0 0;
 	}
 	
+	&--wider {
+		max-width: 900px;
+	}
+	
 	.yoga-body-text {
 		margin: 0 0 30px;
 	}
@@ -49,12 +53,18 @@
 		
 		@media all and (max-width:$break-mobile) {
 			font-size: 2.5rem;
-			line-height: 1.625rem;
+			line-height: 2rem;
 		}
 		
 		@media all and (max-width:$break-small-mobile) {
 			font-size: 2rem;
 			line-height: 1.5rem;
+		}
+	}
+	
+	.yoga-share-buttons {
+		.yoga-button {
+			margin: 0 10px;
 		}
 	}
 	
@@ -69,7 +79,7 @@
 		
 		@media all and (max-width:$break-small-mobile) {
 			font-size: 1.85rem;
-			line-height: 1.65rem;
+			line-height: 1.75rem;
 		}
 	}
 	

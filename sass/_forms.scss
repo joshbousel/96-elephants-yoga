@@ -1,3 +1,68 @@
+.yoga-form {
+	
+	&__panel {
+		height: 0;
+		opacity: 0;
+		transition: all 0.2s ease-out;
+		visibility: hidden;
+		}
+	
+	&__panel--active {
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__panel--second,
+	&__panel--third {
+		.yoga-sub-header {
+			margin: 0 0 15px;
+		}
+	}
+	
+	.select-wrapper-hide {
+		.select-value {
+			display: none;
+		}
+	}
+	
+	.yoga-body-text {
+		margin: 0 0 15px;
+		text-align: center;
+	}
+	
+	.yoga-body-text--small-type {
+		color: #7499B1;
+		margin: 25px 0 0 !important;
+	}
+	
+	.yoga-button {
+		display: block;
+		margin: 0 auto;
+	}
+	
+	.yoga-input {
+		display: block;
+		margin: 0 auto 20px;
+		width: 75%;
+		
+		@media all and (max-width:$break-desktop) {
+			width: 100%;
+		}
+	}
+	
+	.yoga-sub-header--light-blue {
+		margin: 5px 0 10px;
+	}
+	
+	.yoga-sticker-image {
+		display: block;
+		height: auto;
+		margin: 25px auto 0;
+		width: 125px;
+	}
+}
+
 .yoga-input {
 	appearance: none;
 	background: #fff;
