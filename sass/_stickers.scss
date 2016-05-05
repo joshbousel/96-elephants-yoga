@@ -1,0 +1,91 @@
+.yoga-form {
+	
+	&__panel {
+		height: 0;
+		opacity: 0;
+		transition: all 0.2s ease-out;
+		visibility: hidden;
+		
+		.yoga-header {
+			font-size: 4.75rem;
+			line-height: 3.85rem;
+			
+			@media all and (max-width:$break-desktop) {
+				font-size: 4rem;
+				line-height: 3.15rem;
+			}
+			
+			@media all and (max-width:$break-tablet) {
+				font-size: 3.5rem;
+				line-height: 2.625rem;
+			}
+			
+			@media all and (max-width:$break-mobile) {
+				font-size: 2.5rem;
+				line-height: 2rem;
+			}
+			
+			@media all and (max-width:$break-small-mobile) {
+				font-size: 2rem;
+				line-height: 1.5rem;
+			}		
+		}
+	}
+	
+	&__panel--active {
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__panel--second,
+	&__panel--third {
+		.yoga-sub-header {
+			margin: 0 0 15px;
+		}
+	}
+	
+	.select-wrapper-hide {
+		.select-value {
+			display: none;
+		}
+	}
+	
+	.yoga-body-text {
+		margin: 0 0 15px;
+		text-align: center;
+	}
+	
+	.yoga-body-text--small-type {
+		color: #7499B1;
+		margin: 25px 0 0 !important;
+	}
+	
+	.yoga-button {
+		display: block;
+		margin: 0 auto;
+	}
+	
+	.yoga-input {
+		display: block;
+		margin: 0 auto 20px;
+		width: 75%;
+		
+		@media all and (max-width:$break-desktop) {
+			width: 100%;
+		}
+	}
+	
+	.yoga-sub-header--light-blue {
+		margin: 5px 0 10px;
+	}
+}
+
+.yoga-sticker {
+	height: 250px;
+	width: auto;
+	
+	@media all and (max-width:$break-mobile) {
+		height: 200px;
+	}
+}
