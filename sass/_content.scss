@@ -13,6 +13,10 @@
 		}
 	}
 	
+	&--has-cream-paper-bg {
+		background-image: url('#{$image-path}cream_paper.jpg');
+	}
+	
 	&--no-bottom-padding {
 		padding: 50px 0 0;
 	}
