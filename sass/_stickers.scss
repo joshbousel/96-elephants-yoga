@@ -52,7 +52,7 @@
 	}
 	
 	.yoga-body-text {
-		margin: 0 0 15px;
+		margin: 0 0 20px;
 		text-align: center;
 	}
 	
@@ -66,6 +66,40 @@
 		margin: 0 auto;
 	}
 	
+	.yoga-form__group {
+		margin: 5px 0 0;
+		opacity: 1;
+		transition: $default-transition;
+		
+		&--is-hidden {
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+		}
+		
+		.yoga-form__label {
+			color: #514c47;
+			display: inline-block;
+			font-size: 1.125rem;
+			line-height: 1.75rem;
+			
+			@media all and (max-width:$break-desktop) {
+				width: calc(100% - 32px);
+			}
+		}
+	}
+	
+	.yoga-form__label {
+		display: block;
+	    margin: 0 auto;
+		text-align: left;
+		width: 75%;
+		
+		@media all and (max-width:$break-desktop) {
+			width: 100%;
+		}
+	}
+	
 	.yoga-input {
 		display: block;
 		margin: 0 auto 20px;
@@ -73,6 +107,16 @@
 		
 		@media all and (max-width:$break-desktop) {
 			width: 100%;
+		}
+	}
+	
+	.yoga-input--is-checkbox {
+		display: inline-block;
+		margin: 0 5px 0 27px;
+		width: 22px;	
+		
+		@media all and (max-width:$break-desktop) {
+			margin: 0 5px 0 0;
 		}
 	}
 	

@@ -126,8 +126,25 @@ $(function(){
 		togglePlaceholderClass($(this));
 	});
 	
+	//Studio Form Toggles
+	$('#materials-stickers').on('change',function(){
+		toggleFieldGroupVisibility($(this),$('.yoga-form__group--for-quantity'));
+	});
+	
+	$('#materials-shirt').on('change',function(){
+		toggleFieldGroupVisibility($(this),$('.yoga-form__group--for-size'));
+	});
+	
+	function toggleFieldGroupVisibility($field,$group) {
+		if ($field.is(':checked')) {
+			$group.removeClass('yoga-form__group--is-hidden');
+		} else {
+			$group.addClass('yoga-form__group--is-hidden');
+		}
+	}
+	
 	//Sticker Form Submission
-	$('.yoga-form .yoga-button').on('click',function(e) {
+	$('.yoga-form--for-stickers .yoga-button').on('click',function(e) {
 		e.preventDefault();
 		
 		var first = $('#first');
