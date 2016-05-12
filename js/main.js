@@ -143,6 +143,80 @@ $(function(){
 		}
 	}
 	
+	togglePlaceholderClass($('#size'));
+	
+	$('#size').on('change',function(){
+		togglePlaceholderClass($(this));
+	});
+	
+	//Studio Form Submission
+	$('.yoga-form--for-studios .yoga-button').on('click',function(e) {
+		e.preventDefault();
+		
+		var $first = $('#first');
+		var $last = $('#last');
+		var $email = $('#email');
+		var studio = $('#studio').val();
+		var address = $('#address').val();
+		var hearAbout = $('#hear_about').val();
+		var materials = $("input[name='materials']:checked").map(function() {
+		    return this.value;
+		}).get().toString();
+		var qty = $('#qty').val();
+		var size = $('#size').val();
+		var funds = $('input[name=funds]:checked').val();
+		var solstice = $('input[name=solstice]:checked').val();
+		var communicate = $("input[name='communicate']:checked").map(function() {
+		    return this.value;
+		}).get().toString();
+		var errorClass = 'yoga-input--error';
+		var errorBlock = $('.yoga-form__panel--first .yoga-body-text--error');
+		var errorCount = 0;
+		var offset = $('.yoga-body-text--error').offset();
+		
+		$first.removeClass(errorClass);
+		$last.removeClass(errorClass);
+		$email.removeClass(errorClass);
+		
+		if ($first.val() == '' || $first.val() == 'First Name') {
+			$first.addClass(errorClass);
+			errorCount++;
+			}
+		if ($last.val() == '' || $last.val() == 'Last Name') {
+			$last.addClass(errorClass);
+			errorCount++;
+			}
+		if ($email.val() == '' || $email.val() == 'Email') {
+			$email.addClass(errorClass);
+			errorCount++;
+			}
+		if (errorCount != 0) {
+			errorBlock.html('Please complete the following fields:');
+			$('html, body').animate({ scrollTop: offset.top }, 250);
+			}
+		else {
+			if (($email.val() != '') && (!isValidEmail($email.val()))) {
+				$email.addClass(errorClass);
+				errorBlock.html('That email address is not valid!');
+			} else {
+				var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+$email.val()+'&cons_first_name='+$first.val()+'&cons_last_name='+$last.val()+'&3255_14271_2_11204='+studio+'&3255_14271_3_11205='+address+'&3255_14271_4_11206='+hearAbout+'&3255_14271_5_11207='+materials+'&3255_14271_6_11208='+qty+'&3255_14271_7_11209='+size+'&3255_14271_8_11210='+funds+'&3255_14271_9_11211='+solstice+'&3255_14271_10_11212='+communicate+'&SURVEY_ID=14271&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
+				url = encodeURI(url)
+				url = url.replace('#','%23');
+				
+				$.ajax({
+					  type: "POST",
+					  url: url
+					}).always(function(){
+						offset = $('.yoga-hero').offset();
+						
+						$('.yoga-form__panel--first').removeClass('yoga-form__panel--active');
+						$('.yoga-form__panel--second').addClass('yoga-form__panel--active');
+						$('html, body').animate({ scrollTop: offset.top }, 250);
+					});
+				}
+			}
+		});	
+	
 	//Sticker Form Submission
 	$('.yoga-form--for-stickers .yoga-button').on('click',function(e) {
 		e.preventDefault();
