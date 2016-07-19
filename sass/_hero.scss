@@ -1,14 +1,14 @@
-.yoga-hero {	
-	background-color: #a3d3f9;
+.origami-hero {	
+	background-color: #c6ecfd;
 	background-image: url('#{$image-path}bg-elephants.jpg');
 	background-position: left bottom;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	padding: 0 0 30%;
+	padding: 0 0 40%;
 	
 	@media all and (max-width:$break-tablet) {
 		background-image: url('#{$image-path}bg-elephants-med.jpg');
-		padding: 0 0 34%;
+		padding: 0 0 39%;
 	}
 	
 	@media all and (max-width:$break-mobile) {
@@ -17,7 +17,7 @@
 	}
 }
 
-.yoga-hero__content {
+.origami-hero__content {
 	margin: 0 auto;
 	max-width: 720px;
 	padding: 75px 0 0;
@@ -47,11 +47,11 @@
 		}
 	}
 	
-	.yoga-body-text {
+	.origami-body-text {
 		margin: 0 0 30px;
 	}
 	
-	.yoga-header {
+	.origami-header {
 		margin: 0 0 10px;
 		
 		@media all and (max-width:$break-tablet) {
@@ -70,13 +70,13 @@
 		}
 	}
 	
-	.yoga-share-buttons {
-		.yoga-button {
+	.origami-share-buttons {
+		.origami-button {
 			margin: 0 10px;
 		}
 	}
 	
-	.yoga-sub-header--red {
+	.origami-sub-header--red {
 		margin: 0 0 35px;
 		
 		@media all and (max-width:$break-mobile) {
@@ -91,12 +91,12 @@
 		}
 	}
 	
-	.yoga-sub-header--smaller {
+	.origami-sub-header--smaller {
 		margin: 0 0 5px;
 	}
 }
 
-.yoga-main {
+.origami-main {
 	position: relative;
 }
 

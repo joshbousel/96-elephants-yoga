@@ -1,19 +1,23 @@
-.yoga-list {
-	margin: 0 0 25px;
+.origami-list {
+	margin: 0 0 10px;
 	
-	&--is-ordered {
-		.yoga-list__item {
-			list-style: decimal;
+	ol {
+		.origami-list__item {
+			list-style-type: decimal;
+			list-style-position: inside;
+			padding: 0 0 10px;
 		}
 	}
 	
-	&--is-unordered {
-		.yoga-list__item {
-			list-style: disc;
+	ul {
+		.origami-list__item {
+			list-style-type: disc;
+			list-style-position: inside;
+			padding: 0 0 10px;
 		}
 	}
 	
 	&__item {
-		@extend .yoga-body-text;
+		@extend .origami-body-text;
 	}
 }

@@ -2,7 +2,7 @@
 	right: 115px;
 }
 
-.yoga-button--menu-donate {
+.origami-button--menu-donate {
 	border-radius: 0;	
 	box-shadow: 1px 1px 1px rgba(0,0,0,.35);
 	font-size: 1.5rem;
@@ -18,7 +18,7 @@
 		display: none;
 	}
     
-    .yoga-button__action {
+    .origami-button__action {
 	    &:before {
 		    color: #000;
 		    content: "\e00d";

@@ -1,4 +1,4 @@
-.yoga-partners {
+.origami-partners {
 	background-image: url('#{$image-path}bg-cardboard.jpg');
 	padding: 50px 0;
 	text-align: center;
@@ -8,12 +8,12 @@
 		max-width: 1000px;
 	}
 	
-	.yoga-header {
+	.origami-header {
 		color: #fff;
 	}
 }
 
-.yoga-partners__group {
+.origami-partners__group {
 	margin: 80px 0 0;
 	
 	@media all and (max-width:$break-tablet) {
@@ -21,7 +21,7 @@
 	}
 	
 	&--are-featured {
-		.yoga-partners__group__logo {
+		.origami-partners__group__logo {
 			@media all and (max-width:$break-tablet) {
 				height: 90px;
 				width: auto;

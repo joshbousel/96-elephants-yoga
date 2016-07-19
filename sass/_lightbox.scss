@@ -1,4 +1,4 @@
-.yoga-lightbox {
+.origami-lightbox {
 	background-color: #fff;
 	background-image: url('#{$image-path}bg-paper.png');
 	left: 50%;
@@ -27,30 +27,30 @@
 		width: 90%;
 	}
 	
-	.yoga-body-text {
+	.origami-body-text {
 		margin: 0 0 25px;
 		text-align: left;
 	}
 	
-	.yoga-header {
+	.origami-header {
 		font-size: 3.5rem;
 		line-height: 3rem;
 		margin: 0 0 25px;
 	}
 	
-	.yoga-sub-header {
+	.origami-sub-header {
 		font-size: 2.75rem;
 		line-height: 2.15rem;
 		margin: 0 0 15px;
 		text-align: left;
 	}
 	
-	.yoga-list__item {
+	.origami-list__item {
 		margin: 25px 0 0 25px;
 	}
 }
 
-.yoga-lightbox__close-button {
+.origami-lightbox__close-button {
 	border-radius: 0;
 	left: 50%;
 	margin: 0 0 0 calc(30% - 45px);
@@ -77,7 +77,7 @@
 	}
 }
 
-.yoga-lightbox__content {
+.origami-lightbox__content {
 	display: none;
 	
 	&--active {
@@ -85,19 +85,19 @@
 	}
 }
 
-.yoga-lightbox-visible {	
-	.yoga-lightbox {
+.origami-lightbox-visible {	
+	.origami-lightbox {
 		opacity: 1;
 		visibility: visible;
 	}
 	
-	.yoga-screen {
+	.origami-screen {
 		opacity: .35;
 		visibility: visible;
 	}
 }
 
-.yoga-screen {
+.origami-screen {
 	background-color: #000;
 	height: 100%;
 	opacity: 0;

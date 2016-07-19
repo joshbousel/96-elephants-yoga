@@ -1,4 +1,4 @@
-.yoga-input {
+.origami-input {
 	appearance: none;
 	background: #fff;
     border: 2px solid #bdd4e1;
@@ -39,7 +39,7 @@
 	}
 	
 	&--is-radio {
-		@extend .yoga-input--is-checkbox;
+		@extend .origami-input--is-checkbox;
 	    border-radius: 50%;
 	    
 	    &:checked {
