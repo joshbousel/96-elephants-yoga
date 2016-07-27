@@ -1,4 +1,4 @@
-.yoga-body-text {
+.origami-body-text {
 	color: $dark-brown;
 	font-family: $font-merriam;
 	font-size: 1.125rem;
@@ -38,7 +38,7 @@
 	}
 }
 
-.yoga-header {
+.origami-header {
 	color: $dark-blue;
 	font-family: $font-akzidenz;
 	font-size: 5.625rem;
@@ -92,7 +92,7 @@
 	}
 }
 
-.yoga-sub-header {
+.origami-sub-header {
 	color: $dark-blue;
 	font-family: $font-akzidenz;
 	font-size: 3.15rem;
@@ -125,10 +125,10 @@
 }
 
 .wf-loading {
- 	.yoga-button,
- 	.yoga-content__pose-nav__item,
- 	.yoga-header,
- 	.yoga-sub-header {
+ 	.origami-button,
+ 	.origami-content__pose-nav__item,
+ 	.origami-header,
+ 	.origami-sub-header {
 	 	visibility: hidden;
  	}
 }
