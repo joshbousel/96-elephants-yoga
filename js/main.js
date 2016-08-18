@@ -352,6 +352,72 @@ $(function(){
 			}
 		});	
 		
+		
+	//Bronx Zoo Form Submission
+	$('.yoga-form--for-bronx-zoo .yoga-button').on('click',function(e) {
+		e.preventDefault();
+		
+		var first = $('#first');
+		var last = $('#last');
+		var email = $('#email');
+		var studio = $('input[name=studio]:checked').val();
+		var partner = $('input[name=partner]:checked').val();
+		var errorClass = 'yoga-input--error';
+		var errorBlock = $('.yoga-form__panel--first .yoga-body-text--error');
+		var errorCount = 0;
+		var offset = $('.yoga-body-text--error').offset();
+		
+		first.removeClass(errorClass);
+		last.removeClass(errorClass);
+		email.removeClass(errorClass);
+		
+		if (first.val() == '' || first.val() == 'First Name') {
+			first.addClass(errorClass);
+			errorCount++;
+			}
+		if (last.val() == '' || last.val() == 'Last Name') {
+			last.addClass(errorClass);
+			errorCount++;
+			}
+		if (email.val() == '' || email.val() == 'Email') {
+			email.addClass(errorClass);
+			errorCount++;
+			}
+		if (errorCount != 0) {
+			errorBlock.html('Please complete the following fields:');
+			$('html, body').animate({ scrollTop: offset.top }, 250);
+			}
+		else {
+			if ((email.val() != '') && (!isValidEmail(email.val()))) {
+				email.addClass(errorClass);
+				errorBlock.html('That email address is not valid!');
+			} else {
+				var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+email.val()+'&cons_first_name='+first.val()+'&cons_last_name='+last.val()+'&3255_14647_2_11523='+studio+'&3255_14647_3_11450='+partner+'&SURVEY_ID=14647&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
+				url = encodeURI(url)
+				url = url.replace('#','%23');
+				
+				$.ajax({
+					  type: "POST",
+					  url: url
+					}).always(function(){
+						offset = $('.yoga-hero').offset();
+						
+						$('.yoga-form__panel--first').removeClass('yoga-form__panel--active');
+						$('.yoga-form__panel--second').addClass('yoga-form__panel--active');
+						$('html, body').animate({ scrollTop: offset.top }, 250);
+					});
+				}
+			}
+		});	
+	
+	$('.yoga-form--for-bronx-zoo input[name=studio]').change(function() {
+        if (this.value == 'yes') {
+            $('.yoga-hidden').show();
+        } else {
+            $('.yoga-hidden').hide();
+        }
+    });
+		
 	function isValidEmail(str) {
 		var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
 		if (filter.test(str)) {
