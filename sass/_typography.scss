@@ -18,8 +18,21 @@
 		}
 	}
 	
+	&--80-width {
+		margin: 0 auto 20px !important;
+		width: 80%;
+		
+		@media all and (max-width:$break-desktop) {
+			width: 100%;
+		}
+	}
+	
 	&--error {
 		color: $red;
+	}
+	
+	&--left-align {
+		text-align: left !important;
 	}
 	
 	&--small-type {
