@@ -15,6 +15,41 @@
 		background-image: url('#{$image-path}bg-elephants-small.jpg');
 		padding: 0 0 36%;
 	}
+	
+	&--not-full-width {
+		float: left;
+		max-height: 646px;
+		min-height: 646px;
+		padding: 0;
+		text-align: center;
+		width: calc(100% - 480px);
+		
+		@media all and (max-width:950px) {
+			float: none;
+			max-height: none;
+			min-height: 0;
+			padding: 0 0 34%;
+			width: 100%;
+		}
+		
+		.yoga-body-text {
+			margin: 0 auto;
+			width: 65%;
+		}
+		
+		.yoga-header { 
+			padding: 50px 0 20px;
+		}
+		
+		.yoga-sub-header {
+			font-size: 2.5rem;
+			margin: 10px 0 0;
+			
+			@media all and (max-width:$break-tablet) {
+				font-size: 1.75rem;
+			}
+		}
+	}
 }
 
 .yoga-hero__content {
