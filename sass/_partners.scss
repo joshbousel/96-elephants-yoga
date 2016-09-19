@@ -46,6 +46,7 @@
 		line-height: 2rem;
 		margin: 0 15px 30px;
 		width: calc(33% - 30px);
+		vertical-align: top;
 		
 		@media all and (max-width:$break-tablet) {
 			width: calc(49% - 30px);
