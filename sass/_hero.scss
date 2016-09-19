@@ -18,16 +18,14 @@
 	
 	&--not-full-width {
 		float: left;
-		max-height: 646px;
-		min-height: 646px;
+		height: 646px;
 		padding: 0;
 		text-align: center;
 		width: calc(100% - 480px);
 		
 		@media all and (max-width:950px) {
 			float: none;
-			max-height: none;
-			min-height: 0;
+			height: auto;
 			padding: 0 0 34%;
 			width: 100%;
 		}

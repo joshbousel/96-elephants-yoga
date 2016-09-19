@@ -1,3 +1,12 @@
+.join-herd {
+	height: 646px;
+	
+	@media all and (max-width:950px) {
+		max-height: none;
+		min-height: 0;
+	}
+}
+
 .yoga-input {
 	appearance: none;
 	background: #fff;

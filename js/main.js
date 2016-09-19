@@ -417,6 +417,60 @@ $(function(){
             $('.yoga-hidden').hide();
         }
     });
+    
+    //Yoga Landing Page Form Submission
+	$('.yoga-form--for-pledge .form__submit').on('click',function(e) {
+		e.preventDefault();
+		
+		var first = $('#global_ivory_ban_pledge_first_name');
+		var last = $('#global_ivory_ban_pledge_last_name');
+		var email = $('#global_ivory_ban_pledge_email');
+		var errorClass = 'form__field__label--error';
+		var errorCount = 0;
+		var offset = $('.join-herd__form').offset();
+
+		console.log(first.val());
+		
+		$('label[for=global_ivory_ban_pledge_first_name]').removeClass(errorClass);
+		$('label[for=global_ivory_ban_pledge_last_name]').removeClass(errorClass);
+		$('label[for=global_ivory_ban_pledge_email]').removeClass(errorClass);
+		
+		if (first.val() == '' || first.val() == 'First Name') {
+			$('label[for=global_ivory_ban_pledge_first_name]').addClass(errorClass);
+			errorCount++;
+			}
+		if (last.val() == '' || last.val() == 'Last Name') {
+			$('label[for=global_ivory_ban_pledge_last_name]').addClass(errorClass);
+			errorCount++;
+			}
+		if (email.val() == '' || email.val() == 'Email') {
+			$('label[for=global_ivory_ban_pledge_email]').addClass(errorClass);
+			errorCount++;
+			}
+		if (errorCount != 0) {
+			$('html, body').animate({ scrollTop: offset.top }, 250);
+			}
+		else {
+			if ((email.val() != '') && (!isValidEmail(email.val()))) {
+				$('label[for=global_ivory_ban_pledge_email]').addClass(errorClass);
+			} else {
+				var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+email.val()+'&cons_first_name='+first.val()+'&cons_last_name='+last.val()+'&SURVEY_ID=14907&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
+				url = encodeURI(url)
+				url = url.replace('#','%23');
+				
+				$.ajax({
+					  type: "POST",
+					  url: url
+					}).always(function(){
+						offset = $('.yoga-hero').offset();
+						
+						$('.join-herd__form').hide();
+						$('.join-herd__thanks').show();
+						$('html, body').animate({ scrollTop: offset.top }, 250);
+					});
+				}
+			}
+		});
 		
 	function isValidEmail(str) {
 		var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
