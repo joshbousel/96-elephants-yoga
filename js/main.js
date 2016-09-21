@@ -435,7 +435,7 @@ $(function(){
 			errorCount++;
 			}
 		if (errorCount != 0) {
-			errorBlock.html('Please complete the following fields:');
+			errorBlock.html('Please enter your email address:');
 			$('html, body').animate({ scrollTop: offset.top }, 250);
 			}
 		else {
@@ -461,7 +461,7 @@ $(function(){
 			}
 		});	
 	
-	var shutOffTime = new Date(2016, 8, 21, 11, 4, 0, 0);
+	var shutOffTime = new Date(2016, 8, 21, 23, 59, 0, 0);
 	var now = new Date();
 		
 	if (shutOffTime <= now) {
