@@ -417,6 +417,57 @@ $(function(){
             $('.yoga-hidden').hide();
         }
     });
+    
+    //Bronx Zoo Registration Closed Form Submission
+	$('.yoga-form--for-bz-reg-closed .yoga-button').on('click',function(e) {
+		e.preventDefault();
+		
+		var email = $('#email2');
+		var errorClass = 'yoga-input--error';
+		var errorBlock = $('.yoga-form__panel--first .yoga-body-text--error');
+		var errorCount = 0;
+		var offset = $('.yoga-body-text--error').offset();
+						
+		email.removeClass(errorClass);
+		
+		if (email.val() == '' || email.val() == 'Email') {
+			email.addClass(errorClass);
+			errorCount++;
+			}
+		if (errorCount != 0) {
+			errorBlock.html('Please complete the following fields:');
+			$('html, body').animate({ scrollTop: offset.top }, 250);
+			}
+		else {
+			if ((email.val() != '') && (!isValidEmail(email.val()))) {
+				email.addClass(errorClass);
+				errorBlock.html('That email address is not valid!');
+			} else {
+				var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+email.val()+'&SURVEY_ID=14947&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
+				url = encodeURI(url)
+				url = url.replace('#','%23');
+				
+				$.ajax({
+					  type: "POST",
+					  url: url
+					}).always(function(){
+						offset = $('.yoga-hero').offset();
+						
+						$('.yoga-form__panel--first').removeClass('yoga-form__panel--active');
+						$('.yoga-form__panel--second').addClass('yoga-form__panel--active');
+						$('html, body').animate({ scrollTop: offset.top }, 250);
+					});
+				}
+			}
+		});	
+	
+	var shutOffTime = new Date(2016, 8, 21, 11, 4, 0, 0);
+	var now = new Date();
+		
+	if (shutOffTime <= now) {
+		$('.yoga-bronx-zoo-registration-form').hide();
+		$('.yoga-bronx-zoo-logistics').show();
+	}	
 		
 	function isValidEmail(str) {
 		var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i

@@ -15,6 +15,12 @@
 		background-image: url('#{$image-path}bg-elephants-small.jpg');
 		padding: 0 0 36%;
 	}
+	
+	.yoga-divider {
+		border-top: 1px solid #5b90a5;
+		margin: 0 auto 30px;
+		width: 60%;
+	}
 }
 
 .yoga-hero__content {
