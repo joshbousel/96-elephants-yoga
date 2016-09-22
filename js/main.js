@@ -461,6 +461,7 @@ $(function(){
 			}
 		});	
 	
+/*
 	var shutOffTime = new Date(2016, 8, 21, 23, 59, 0, 0);
 	var now = new Date();
 		
@@ -468,6 +469,7 @@ $(function(){
 		$('.yoga-bronx-zoo-registration-form').hide();
 		$('.yoga-bronx-zoo-logistics').show();
 	}	
+*/
 		
 	function isValidEmail(str) {
 		var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
