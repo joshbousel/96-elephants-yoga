@@ -1,3 +1,9 @@
+.yoga-form {
+	&--for-bz-reg-closed {
+		margin: 40px 0;
+	}	
+}
+
 .yoga-input {
 	appearance: none;
 	background: #fff;
@@ -30,7 +36,6 @@
 			background-image: url('#{$image-path}check.png');
 		}
 	}
-	
 	
 	&--is-dropdown {
 		background-image: url('#{$image-path}arrow-down.png');
