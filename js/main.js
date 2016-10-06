@@ -64,9 +64,20 @@ $(function(){
 	$('.yoga-donate .yoga-button').on('click touchend',function(e){
 		e.preventDefault();
 		
-		var donationLink = 'https://secure3.convio.net/wcs/site/Donation2?df_id=10241&mfc_pref=T&10241.donation=form1&set.DonationLevel='+donationLevelId;
+		var donationID = '10241';
+		
+		if ($(this).hasClass('yoga-button--yogis-donate')) {
+			donationID = '10801';
+		}
+		
+		var donationLink = 'https://secure3.convio.net/wcs/site/Donation2?df_id='+donationID+'&mfc_pref=T&'+donationID+'.donation=form1&set.DonationLevel='+donationLevelId;
 		window.location.href = donationLink;
 	});
+	
+	
+	
+	http://e.wcs.org/site/Donation2?10801.donation=form1&df_id=10801&mfc_pref=T
+
 	
 	// Lightbox Functions
 	function toggleLightbox(visible) {
@@ -480,4 +491,40 @@ $(function(){
 			return false;
 		}
 	}
+	
+	//Yogi for Elephants Event Interest
+	$('.yoga-form--for-free-events .yoga-button').on('click',function(e) {
+		e.preventDefault();
+		
+		var email = $('#email');
+		var errorClass = 'yoga-input--error';
+		var errorCount = 0;
+		
+		email.removeClass(errorClass);
+
+		if (email.val() == '' || email.val() == 'Email') {
+			email.addClass(errorClass);
+			errorCount++;
+			}
+		if ((email.val() != '') && (!isValidEmail(email.val()))) {
+			email.addClass(errorClass);
+			errorCount++;
+		}
+		if (errorCount != 0) {
+			return;
+			}
+		else {
+			var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+email.val()+'&SURVEY_ID=14947&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
+			url = encodeURI(url)
+			url = url.replace('#','%23');
+			
+			$.ajax({
+				  type: "POST",
+				  url: url
+				}).always(function(){
+					$('.yoga-form__panel--first').removeClass('yoga-form__panel--active');
+					$('.yoga-form__panel--second').addClass('yoga-form__panel--active');
+				});
+			}
+		});
 });

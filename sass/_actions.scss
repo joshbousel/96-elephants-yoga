@@ -47,10 +47,34 @@
 		padding: 7px 20px;
 	}
 	
+	.yoga-form {		
+		.yoga-body-text {
+			text-align: left;
+		}
+		
+		.yoga-button {
+			display: inline;
+			margin: 0;
+		}
+		
+		.yoga-input {
+			border: 2px solid #737a7d;
+			display: inline-block;
+		    margin: 0 0 10px;
+			width: 95%;
+			
+			&--error {
+				background: #ffe0e0;
+				border: 2px solid #c12e32;
+			}
+		}
+	}
+		
 	.yoga-sub-header {
 		background-image: -webkit-linear-gradient(transparent, transparent),url('../assets/textures/white--full-010fca9b9c7c016970eca1ff9fd25e9d.jpg');
 		background-image: -o-linear-gradient(transparent, transparent);
 		font-size: 2.75rem;
+		line-height: 2.75rem;
 		margin: 0 0 15px;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
