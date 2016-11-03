@@ -129,8 +129,8 @@
 		<section class="yoga-hero">
 			<div class="yoga-hero__content yoga-hero__content--wider">
 				<div class="yoga-form yoga-form--for-studios yoga-form__panel yoga-form__panel--first yoga-form__panel--active">
-					<h2 class="yoga-header">Help us Spread the Word</h2>
-					<div class="yoga-body-text">Thank you for expressing an interest in promoting the #ElephantYogaChallenge at your studio.  Please fill out the form below and we will include you in future emails about our progress and scheduled activities.  Please allow up to 2 weeks to receive materials that you select.</div>
+					<h2 class="yoga-header">Become a 96 Elephants Partner</h2>
+					<div class="yoga-body-text">Thank you for expressing an interest in promoting #YogisForEllies at your studio. Please fill out the form below and we will be in touch soon.</div>
 					<p class="yoga-body-text yoga-body-text--error"></p>
 					<div class="yoga-body-text">
 						<label class="yoga-form__label">First name</label>
@@ -145,79 +145,48 @@
 						<input class="yoga-input" type="text" name="email" id="email">
 					</div>
 					<div class="yoga-body-text">
+						<label class="yoga-form__label">Phone</label>
+						<input class="yoga-input" type="text" name="phone" id="phone">
+					</div>
+					<div class="yoga-body-text">
 						<label class="yoga-form__label">Studio Name</label>
 						<input class="yoga-input" type="text" name="studio" id="studio">
 					</div>
 					<div class="yoga-body-text">
-						<label class="yoga-form__label">Studio Address</label>
+						<label class="yoga-form__label">Studio Location</label>
 						<input class="yoga-input" type="text" name="address" id="address">
 					</div>
 					<div class="yoga-body-text">
-						<label class="yoga-form__label">How did you hear about the Elephant Yoga Challenge?</label>
-						<input class="yoga-input" type="text" name="hear_about" id="hear_about">
-					</div>
-					<div class="yoga-body-text">
-						<label class="yoga-form__label">Materials you would like to receive to promote the challenge in your studio (check all that apply):</label>
+						<label class="yoga-form__label">Are you a yoga studio member?</label>
 						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-checkbox" type="checkbox" name="materials" id="materials-stickers" value="stickers">
-							<label class="yoga-form__label" for="materials-stickers">Stickers</label>
-						</div>
-						<div class="yoga-form__group yoga-form__group--is-hidden yoga-form__group--for-quantity">
-							<input class="yoga-input" type="text" name="qty" id="qty" placeholder="Quantity Needed">
+							<input class="yoga-input yoga-input--is-radio" type="radio" name="member" id="member-yes" value="yes">
+							<label class="yoga-form__label" for="member-yes">Yes</label>
 						</div>
 						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-checkbox" type="checkbox" name="materials" id="materials-toolkit" value="toolkit">
-							<label class="yoga-form__label" for="materials-toolkit">Toolkit to download signs, posters and description of the challenge</label>
-						</div>
-						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-checkbox" type="checkbox" name="materials" id="materials-shirt" value="shirt">
-							<label class="yoga-form__label" for="materials-shirt">T-shirt for instructor (women's fitted: S, M, L, XL)</label>
-						</div>
-						<div class="yoga-form__group yoga-form__group--is-hidden yoga-form__group--for-size">
-							<select class="yoga-input yoga-input--is-dropdown" name="size" id="size">
-								<option value="">Select a Size</option>
-								<option value="small">Small</option>
-								<option value="medium">Medium</option>
-								<option value="large">Large</option>
-								<option value="x-large">X-Large</option>
-							</select>
+							<input class="yoga-input yoga-input--is-radio" type="radio" name="member" id="member-no" value="no">
+							<label class="yoga-form__label" for="member-no">No</label>
 						</div>
 					</div>
 					<div class="yoga-body-text">
-						<label class="yoga-form__label">Are you willing to pledge funds from a dedicated class(es) towards 96 Elephants?</label>
+						<label class="yoga-form__label">Are you a yoga teacher?</label>
 						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-radio" type="radio" name="funds" id="funds-yes" value="yes">
-							<label class="yoga-form__label" for="funds-yes">Yes</label>
+							<input class="yoga-input yoga-input--is-radio" type="radio" name="teacher" id="teacher-yes" value="yes">
+							<label class="yoga-form__label" for="teacher-yes">Yes</label>
 						</div>
 						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-radio" type="radio" name="funds" id="funds-no" value="no">
-							<label class="yoga-form__label" for="funds-no">No</label>
-						</div>
-					</div>
-					<div class="yoga-body-text">
-						<label class="yoga-form__label">Would you consider having a dedicated Elephant Yoga Challenge Day on June 21 – Summer Solstice?</label>
-						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-radio" type="radio" name="solstice" id="solstice-yes" value="yes">
-							<label class="yoga-form__label" for="solstice-yes">Yes</label>
-						</div>
-						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-radio" type="radio" name="solstice" id="solstice-no" value="no">
-							<label class="yoga-form__label" for="solstice-no">No</label>
+							<input class="yoga-input yoga-input--is-radio" type="radio" name="teacher" id="teacher-no" value="no">
+							<label class="yoga-form__label" for="teacher-no">No</label>
 						</div>
 					</div>
 					<div class="yoga-body-text">
-						<label class="yoga-form__label">How do you communicate with your yogis?</label>
+						<label class="yoga-form__label">Are you a yoga studio owner?</label>
 						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-checkbox" type="checkbox" name="communicate" id="communicate-email" value="email">
-							<label class="yoga-form__label" for="communicate-email">Email</label>
+							<input class="yoga-input yoga-input--is-radio" type="radio" name="owner" id="owner-yes" value="yes">
+							<label class="yoga-form__label" for="owner-yes">Yes</label>
 						</div>
 						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-checkbox" type="checkbox" name="communicate" id="communicate-facebook" value="facebook">
-							<label class="yoga-form__label" for="communicate-facebook">Facebook</label>
-						</div>
-						<div class="yoga-form__group">
-							<input class="yoga-input yoga-input--is-checkbox" type="checkbox" name="communicate" id="communicate-twitter" value="twitter">
-							<label class="yoga-form__label" for="communicate-twitter">Twitter</label>
+							<input class="yoga-input yoga-input--is-radio" type="radio" name="owner" id="owner-no" value="no">
+							<label class="yoga-form__label" for="owner-no">No</label>
 						</div>
 					</div>
 					<button class="yoga-button">
@@ -226,7 +195,8 @@
 				</div>
 				<div class="yoga-form__panel yoga-form__panel--second">
 					<h3 class="yoga-header">Thank You</h3>
-					<div class="yoga-body-text">Thank you for helping us spread the word and change the course of elephants' future.</div>
+					<div class="yoga-body-text">Thanks for signing up your studio as a #YogisForEllies partner. Someone from the 96 Elephants team will be in touch shortly.</div>
+					<h4 class="yoga-sub-header">Namaste</h4>
 				</div>
 			</div>
 		</section>
