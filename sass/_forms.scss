@@ -1,7 +1,16 @@
 .yoga-form {
 	&--for-bz-reg-closed {
 		margin: 40px 0;
-	}	
+	}
+}	
+
+.join-herd {
+	height: 646px;
+	
+	@media all and (max-width:950px) {
+		max-height: none;
+		min-height: 0;
+	}
 }
 
 .yoga-input {

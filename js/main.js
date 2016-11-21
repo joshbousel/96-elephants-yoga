@@ -64,9 +64,20 @@ $(function(){
 	$('.yoga-donate .yoga-button').on('click touchend',function(e){
 		e.preventDefault();
 		
-		var donationLink = 'https://secure3.convio.net/wcs/site/Donation2?df_id=10241&mfc_pref=T&10241.donation=form1&set.DonationLevel='+donationLevelId;
+		var donationID = '10241';
+		
+		if ($(this).hasClass('yoga-button--yogis-donate')) {
+			donationID = '10801';
+		}
+		
+		var donationLink = 'https://secure3.convio.net/wcs/site/Donation2?df_id='+donationID+'&mfc_pref=T&'+donationID+'.donation=form1&set.DonationLevel='+donationLevelId;
 		window.location.href = donationLink;
 	});
+	
+	
+	
+	http://e.wcs.org/site/Donation2?10801.donation=form1&df_id=10801&mfc_pref=T
+
 	
 	// Lightbox Functions
 	function toggleLightbox(visible) {
@@ -158,17 +169,10 @@ $(function(){
 		var $email = $('#email');
 		var studio = $('#studio').val();
 		var address = $('#address').val();
-		var hearAbout = $('#hear_about').val();
-		var materials = $("input[name='materials']:checked").map(function() {
-		    return this.value;
-		}).get().toString();
-		var qty = $('#qty').val();
-		var size = $('#size').val();
-		var funds = $('input[name=funds]:checked').val();
-		var solstice = $('input[name=solstice]:checked').val();
-		var communicate = $("input[name='communicate']:checked").map(function() {
-		    return this.value;
-		}).get().toString();
+		var phone = $('#phone').val();
+		var member = $('input[name=member]:checked').val();
+		var teacher = $('input[name=teacher]:checked').val();
+		var owner = $('input[name=owner]:checked').val();
 		var errorClass = 'yoga-input--error';
 		var errorBlock = $('.yoga-form__panel--first .yoga-body-text--error');
 		var errorCount = 0;
@@ -199,7 +203,7 @@ $(function(){
 				$email.addClass(errorClass);
 				errorBlock.html('That email address is not valid!');
 			} else {
-				var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+$email.val()+'&cons_first_name='+$first.val()+'&cons_last_name='+$last.val()+'&3255_14271_2_11204='+studio+'&3255_14271_3_11205='+address+'&3255_14271_4_11206='+hearAbout+'&3255_14271_5_11207='+materials+'&3255_14271_6_11208='+qty+'&3255_14271_7_11209='+size+'&3255_14271_8_11210='+funds+'&3255_14271_9_11211='+solstice+'&3255_14271_10_11212='+communicate+'&SURVEY_ID=14271&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
+				var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+$email.val()+'&cons_first_name='+$first.val()+'&cons_last_name='+$last.val()+'&3255_14271_2_11204='+studio+'&3255_14271_3_11205='+address+'&3255_14271_11_11803='+phone+'&3255_14271_12_11804='+member+'&3255_14271_13_11805='+teacher+'&3255_14271_14_11806='+owner+'&SURVEY_ID=14271&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
 				url = encodeURI(url)
 				url = url.replace('#','%23');
 				
@@ -418,7 +422,7 @@ $(function(){
         }
     });
     
-    //Bronx Zoo Registration Closed Form Submission
+	//Bronx Zoo Registration Closed Form Submission
 	$('.yoga-form--for-bz-reg-closed .yoga-button').on('click',function(e) {
 		e.preventDefault();
 		
@@ -459,17 +463,61 @@ $(function(){
 					});
 				}
 			}
-		});	
-	
-/*
-	var shutOffTime = new Date(2016, 8, 21, 23, 59, 0, 0);
-	var now = new Date();
+		});
 		
-	if (shutOffTime <= now) {
-		$('.yoga-bronx-zoo-registration-form').hide();
-		$('.yoga-bronx-zoo-logistics').show();
-	}	
-*/
+    //Yoga Landing Page Form Submission
+	$('.yoga-form--for-pledge .form__submit').on('click',function(e) {
+		e.preventDefault();
+		
+		var first = $('#global_ivory_ban_pledge_first_name');
+		var last = $('#global_ivory_ban_pledge_last_name');
+		var email = $('#global_ivory_ban_pledge_email');
+		var errorClass = 'form__field__label--error';
+		var errorCount = 0;
+		var offset = $('.join-herd__form').offset();
+
+		console.log(first.val());
+		
+		$('label[for=global_ivory_ban_pledge_first_name]').removeClass(errorClass);
+		$('label[for=global_ivory_ban_pledge_last_name]').removeClass(errorClass);
+		$('label[for=global_ivory_ban_pledge_email]').removeClass(errorClass);
+		
+		if (first.val() == '' || first.val() == 'First Name') {
+			$('label[for=global_ivory_ban_pledge_first_name]').addClass(errorClass);
+			errorCount++;
+			}
+		if (last.val() == '' || last.val() == 'Last Name') {
+			$('label[for=global_ivory_ban_pledge_last_name]').addClass(errorClass);
+			errorCount++;
+			}
+		if (email.val() == '' || email.val() == 'Email') {
+			$('label[for=global_ivory_ban_pledge_email]').addClass(errorClass);
+			errorCount++;
+			}
+		if (errorCount != 0) {
+			$('html, body').animate({ scrollTop: offset.top }, 250);
+			}
+		else {
+			if ((email.val() != '') && (!isValidEmail(email.val()))) {
+				$('label[for=global_ivory_ban_pledge_email]').addClass(errorClass);
+			} else {
+				var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+email.val()+'&cons_first_name='+first.val()+'&cons_last_name='+last.val()+'&SURVEY_ID=14907&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
+				url = encodeURI(url)
+				url = url.replace('#','%23');
+				
+				$.ajax({
+					  type: "POST",
+					  url: url
+					}).always(function(){
+						offset = $('.yoga-hero').offset();
+						
+						$('.join-herd__form').hide();
+						$('.join-herd__thanks').show();
+						$('html, body').animate({ scrollTop: offset.top }, 250);
+					});
+				}
+			}
+		});
 		
 	function isValidEmail(str) {
 		var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
@@ -479,4 +527,40 @@ $(function(){
 			return false;
 		}
 	}
+	
+	//Yogi for Elephants Event Interest
+	$('.yoga-form--for-free-events .yoga-button').on('click',function(e) {
+		e.preventDefault();
+		
+		var email = $('#email');
+		var errorClass = 'yoga-input--error';
+		var errorCount = 0;
+		
+		email.removeClass(errorClass);
+
+		if (email.val() == '' || email.val() == 'Email') {
+			email.addClass(errorClass);
+			errorCount++;
+			}
+		if ((email.val() != '') && (!isValidEmail(email.val()))) {
+			email.addClass(errorClass);
+			errorCount++;
+		}
+		if (errorCount != 0) {
+			return;
+			}
+		else {
+			var url = 'http://e.wcs.org/site/Survey?cons_info_component=t&cons_email='+email.val()+'&SURVEY_ID=14947&ACTION_SUBMIT_SURVEY_RESPONSE=Submit';				
+			url = encodeURI(url)
+			url = url.replace('#','%23');
+			
+			$.ajax({
+				  type: "POST",
+				  url: url
+				}).always(function(){
+					$('.yoga-form__panel--first').removeClass('yoga-form__panel--active');
+					$('.yoga-form__panel--second').addClass('yoga-form__panel--active');
+				});
+			}
+		});
 });

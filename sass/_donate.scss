@@ -6,6 +6,25 @@
 	height: 550px;
 	position: relative;
 	text-align: center;
+	
+	&--large {
+		background-image: url('#{$image-path}bg-elephant-donate-large.jpg');
+		height: 625px;
+	}
+	
+	.yoga-body-text,
+	.yoga-header {
+		color: #fff;
+	}
+	
+	.yoga-header {
+		background-image: -webkit-linear-gradient(transparent, transparent),url('../assets/textures/white--full-010fca9b9c7c016970eca1ff9fd25e9d.jpg');
+		background-image: -o-linear-gradient(transparent, transparent);
+		margin: 0 0 15px;
+		padding: 25px 0 0;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 }
 
 .yoga-donate__levels {
